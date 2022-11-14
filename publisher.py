@@ -1,13 +1,13 @@
 import os
 from google.cloud import pubsub_v1
 
-credentials_path='/home/ander/Ulima/pubsub/galvanic-flame-368521-31e6c9c62cb4.json'
+credentials_path='/home/ander/Ulima/pubsub/new-neo-368606-60d4abe8acbd.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 
 publisher= pubsub_v1.PublisherClient()
-topic_path='projects/galvanic-flame-368521/topics/pubsubpattern'
+topic_path='projects/new-neo-368606/topics/arquitectura-pub-sub'
 
-data='READY'
+data='Enviar mensaje desde Publisher'
 data=data.encode('utf-8')
 attributes = {
     'notification': 'True',

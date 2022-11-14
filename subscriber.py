@@ -2,13 +2,13 @@ import os
 from google.cloud import pubsub_v1
 from concurrent.futures import TimeoutError
 
-credentials_path='/home/ander/Ulima/pubsub/galvanic-flame-368521-31e6c9c62cb4.json'
+credentials_path='/home/ander/Ulima/pubsub/new-neo-368606-60d4abe8acbd.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 
 timeout=5.0
 
 subscriber = pubsub_v1.SubscriberClient()
-subscription_path='projects/galvanic-flame-368521/subscriptions/pubsubpattern-sub'
+subscription_path='projects/new-neo-368606/subscriptions/arquitectura-pub-sub-sub'
 
 def callback(message):
     print(f'Received message:{message}')

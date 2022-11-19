@@ -18,20 +18,20 @@ def readings(request):
     data_json=json.loads(data)
     print(f'request data json:{data_json}')
 
-    sensor_name=data_json['sensorName']
-    temperature =data_json['temperature']
-    humidity =data_json['humidity']
-    print(f'sensor name:{sensor_name}')
-    print(f'temperature:{temperature}')
-    print(f'humidity:{humidity}')
+    productName=data_json['productName']
+    categoria =data_json['categoria']
+    precio =data_json['precio']
+    print(f'Nombre del producto:{productName}')
+    print(f'Categoria del producto:{categoria}')
+    print(f'Precio del producto:{precio}')
     
     topic_path='projects/new-neo-368606/topics/arquitectura-pub-sub'
     message_json=json.dumps({
-        'data':{'message':'sensor readings!'},
+        'data':{'message':'Data de un nuevo producto!'},
         'readings':{
-            'sensorName':sensor_name,
-            'temperature':temperature,
-            'humidity':humidity
+            'productName':productName,
+            'categoria':categoria,
+            'precio':precio
         }
     })
 
